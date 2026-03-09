@@ -190,10 +190,6 @@ class AndroidEnvironment {
       rustFlags = '$rustFlags\x1f';
     }
     rustFlags = '$rustFlags-L\x1f$workaroundDir';
-
-    // 16KB page alignment required by Google Play for native .so files
-    rustFlags = '$rustFlags\x1f-Clink-arg=-z,max-page-size=16384';
-
     return rustFlags;
   }
 }
